@@ -5,6 +5,7 @@ import com.qa.openkart.pages.AccountsPage;
 import com.qa.openkart.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
 import java.util.Properties;
@@ -17,7 +18,7 @@ public class BaseTest {
     public Properties properties;
     public AccountsPage accountsPage;
 
-    @BeforeTest
+    @BeforeClass
     public void setUp(){
         driverFactory = new DriverFactory();
         properties = driverFactory.initProp();

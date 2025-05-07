@@ -32,7 +32,10 @@ public class ElementUtil {
     public List<WebElement> getElements(By locator) {
         return driver.findElements(locator);
     }
-
+    public List<WebElement> getElementsVisible(By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+    }
     public void doSendKeys(By locator, String value) {
         getElement(locator).sendKeys(value);
     }
