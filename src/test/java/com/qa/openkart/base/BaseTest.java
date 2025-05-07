@@ -4,6 +4,7 @@ import com.qa.openkart.DriverFactory.DriverFactory;
 import com.qa.openkart.pages.AccountsPage;
 import com.qa.openkart.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -28,8 +29,11 @@ public class BaseTest {
     }
 
 
-    @AfterTest
+    @AfterClass
     public void tearDown(){
-        driver.quit();
+        if(driver!= null){
+            driver.quit();
+        }
+
     }
 }
